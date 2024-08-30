@@ -53,3 +53,6 @@ class ModelTrainerConfig:
     def __init__(self):
         pass
 
+class ModelPusherConfig:
+    def __init__(self):
+        pass
