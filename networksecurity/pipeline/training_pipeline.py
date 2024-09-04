@@ -71,7 +71,7 @@ class TrainingPipeline:
             raise NetworkSecurityException(e,sys)
         
     DataTransformationArtifact,
-    def def start_model_trainer(self,data_transformation_artifact:DataTransformationArtifact)->ModelTrainerArtifact:
+    def start_model_trainer(self,data_transformation_artifact:DataTransformationArtifact)->ModelTrainerArtifact:
         try:
             self.model_trainer_config: ModelTrainerConfig = ModelTrainerConfig(
                 training_pipeline_config=self.training_pipeline_config
