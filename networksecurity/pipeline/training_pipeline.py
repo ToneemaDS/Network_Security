@@ -70,16 +70,13 @@ class TrainingPipeline:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
-    DataTransformationArtifact,
-    def start_model_trainer(self,data_transformation_artifact:DataTransformationArtifact)->ModelTrainerArtifact:
+    def start_model_trainer(self,data_transformation_artifact:DataTransformationArtifact):
         try:
-            self.model_trainer_config: ModelTrainerConfig = ModelTrainerConfig(
-                training_pipeline_config=self.training_pipeline_config
-            )
+            model_trainer_config =  ModelTrainerConfig(training_pipeline_config=self.training_pipeline_config)
 
             model_trainer = ModelTrainer(
                 data_transformation_artifact=data_transformation_artifact,
-                model_trainer_config=self.model_trainer_config,
+                model_trainer_config=model_trainer_config,
             )
 
             model_trainer_artifact = model_trainer.initiate_model_trainer()
@@ -95,11 +92,7 @@ class TrainingPipeline:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
-    def start_model_trainer(self):
-        try:
-            pass
-        except Exception as e:
-            raise NetworkSecurityException(e,sys)
+  
         
     def run_pipeline(self):
         try:
